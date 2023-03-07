@@ -2,7 +2,7 @@ const EventEmitter = require("node:events")
 
 const emitter = new EventEmitter()
 
-emitter.on("order-burger", (size,topping) => {
+emitter.once("order-burger", (size,topping) => {                       // emitter.once
     console.log(`order recieved,preparing, ${size} size ${topping} burger`)
 })
 emitter.on("order-burger", (size) => {
@@ -22,4 +22,6 @@ emitter.on("order-burger",(size,topping)=> {                 // if no size given
     }
 })
 console.log("This works first before event occurs")
+// emitter.removeAllListeners("order-burger")                 // emitter.removeAllListeners  // emitterListener
 emitter.emit("order-burger","large","vegs")
+emitter.emit("order-burger","small","vegs")

@@ -14,3 +14,6 @@ burgerShop.displayOrderNumber();
 
 // burgerShop.order();
 // burgerShop.displayOrderNumber();
+
+burgerShop.order("small","Veg");
+burgerShop.displayOrderNumber();
