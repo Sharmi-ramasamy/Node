@@ -4,7 +4,7 @@ const fs = require("node:fs/promises")
 console.log("first")
 // read file using readFile method
 fs.readFile("File.txt","utf-8")
-.then((data) => {console.log(data)})
+.then((data) => {console.log(data)})                   
 .catch((error) => {console.log(error)})
 
 //to prove this is asynchronous add few log stmts

@@ -10,18 +10,18 @@ server.listen(3033, () => {
 })
 
 
-// 2nd method
+// 3rd method  - using streams
 
 const servers = http.createServer((request, response) => {
     response.writeHead(200, {"Content-Type": "text/html"});
-    fs.createReadStream("./HttpHtml.html").pipe(response)
+    fs.createReadStream(__dirname + "/HttpHtml.html").pipe(response)
     
 })
 servers.listen(4040, () => {
     console.log('server running on port 4040')
 })
 
-// 3rd Method
+// 2nd Method
 
 const serverr = http.createServer((request, response) => {
     response.writeHead(200, {"Content-Type": "text/html"});

@@ -3,9 +3,9 @@ const fs = require("node:fs");
 // the fs-file system module internally uses the buffer
 
 // const fileContent = fs.readFileSync("./File.txt")      // the method is synconous way of reading a file.
-// console.log(fileContent);
+// console.log(fileContent);                              // buffer with binary data
 
-// const fileContents = fs.readFileSync("./File.txt", "utf-8")
+// const fileContents = fs.readFileSync("./File.txt", "utf-8")       // utf-8 is used to get output in human readable form
 // console.log(fileContents)
 
 // readfile() method
@@ -34,7 +34,7 @@ fs.readFile("./File.txt", "utf-8", (error, data)=> {
 
  // writeFile Method
 
- fs.writeFileSync("./Greet.txt", "Hello World with Synchronous Method")
+ fs.writeFileSync("./Greet.txt", "Hello World with Synchronous Method")          // overwrite the file
 fs.writeFile("./Greet.txt", " ...Hello World with Asynchronous method", {flag: "a"} , (error) => {      // asynchronous way to wirteFile
     if(error) {
         console.log(error)
@@ -43,3 +43,6 @@ fs.writeFile("./Greet.txt", " ...Hello World with Asynchronous method", {flag: "
         console.log("File Written Successfully")
     }
 })    
+
+
+// append the file - flag {} is used 
