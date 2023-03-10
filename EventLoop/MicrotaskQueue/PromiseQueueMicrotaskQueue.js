@@ -18,3 +18,18 @@ Promise.resolve().then(() => {
     })
 })
 Promise.resolve().then(() => {console.log("I'm Promise.resolve3")})
+
+
+
+
+// OUTPUT 
+
+
+// I'm process.nextTick1
+// I'm process.nextTick2
+// i'm process.nexttick 3
+// I'm a inner nextTick inside NextTick
+// I'm Promise.resolve1
+// I'm Promise.resolve2
+// I'm Promise.resolve3
+// I'm a inner nextTick inside Promise then block

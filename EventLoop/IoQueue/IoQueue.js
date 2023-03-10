@@ -11,3 +11,8 @@ process.nextTick(() => console.log("I'm process.nextTick 1"))
 Promise.resolve().then(() => console.log("I'm Promise.resolve 1"))
 
 // Callbacks in microtask queues are executed before the callbacks in I/O queue
+
+
+// I'm process.nextTick 1
+// I'm Promise.resolve 1
+// I'm readFile 1

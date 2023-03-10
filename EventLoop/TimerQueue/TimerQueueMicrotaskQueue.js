@@ -2,7 +2,7 @@ setTimeout(() => console.log("I'm settimeout 1"), 0);
 setTimeout(() => {
     console.log("I'm setTimeout 2")
     process.nextTick(() => {
-        console.log("I'm innner nextTick inside setTimeout")
+        console.log("I'm innner nextTick inside setTimeout")            // 
     })
 }, 0);
 setTimeout(() => console.log("I'm setTimeout 3"), 0);
@@ -25,3 +25,21 @@ Promise.resolve().then(() => {
 Promise.resolve().then(() => console.log("I'm Promise.resolve 4"))
 
 // Callbacks in microtask queue are executed inbetween the execution of callbacks in timer queue
+
+
+
+// OUTPUT 
+
+// I'm process.nextTick 1
+// I'm process.nextTick 2
+// I'm process.nextTick 3
+// I'm inner nextTick inside another nextTick
+// I'm Promise.resolve 1
+// I'm Promise.resolve 2
+// I'm Promise.resolve 4
+// I'm promise.resolve 3
+// I'm inner nextTick inside then Promise.resolve
+// I'm settimeout 1
+// I'm setTimeout 2
+// I'm innner nextTick inside setTimeout
+// I'm setTimeout 3
